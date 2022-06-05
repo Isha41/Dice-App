@@ -21,19 +21,25 @@ class homepage extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  flex: 2,
-                  child: Image.asset(
-                    'assets/dice1.png',
+                  child: GestureDetector(
+                    //Anonymous Function
+                    onTap: () {
+                      print('Left Dice Tapped');
+                    },
+                    child: Image.asset(
+                      'assets/dice1.png',
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: Image.asset(
-                    'assets/dice2.png',
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(
-                    'assets/dice3.png',
+                  child: GestureDetector(
+                    //Anonymous Function
+                    onTap: () {
+                      print('Right Dice Tapped');
+                    },
+                    child: Image.asset(
+                      'assets/dice2.png',
+                    ),
                   ),
                 ),
               ],
