@@ -14,6 +14,33 @@ class homepage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Image.asset(
+                    'assets/dice1.png',
+                  ),
+                ),
+                Expanded(
+                  child: Image.asset(
+                    'assets/dice2.png',
+                  ),
+                ),
+                Expanded(
+                  child: Image.asset(
+                    'assets/dice3.png',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
