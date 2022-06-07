@@ -64,7 +64,7 @@ class _homepageState extends State<homepage> {
               ],
             ),
             SizedBox(
-              height: 70,
+              height: 100,
             ),
             OutlinedButton(
               onPressed: () {
@@ -72,13 +72,13 @@ class _homepageState extends State<homepage> {
                     MaterialPageRoute(builder: (context) => NextPage()));
               },
               child: Text(
-                "Ask Me",
+                "NEXT:Ask Me",
                 style: TextStyle(color: Colors.white),
               ),
               style: OutlinedButton.styleFrom(
                 side: BorderSide(
                   width: 2,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
