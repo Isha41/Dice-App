@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class homepage extends StatelessWidget {
+class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
+
+  @override
+  State<homepage> createState() => _homepageState();
+}
+
+class _homepageState extends State<homepage> {
+  int leftDice = 1;
+
+  int rightDice = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +33,13 @@ class homepage extends StatelessWidget {
                   child: GestureDetector(
                     //Anonymous Function
                     onTap: () {
-                      print('Left Dice Tapped');
+                      setState(() {
+                        leftDice = 5;
+                      });
+                      print(leftDice);
                     },
                     child: Image.asset(
-                      'assets/dice1.png',
+                      'assets/dice$leftDice.png',
                     ),
                   ),
                 ),
@@ -35,10 +47,11 @@ class homepage extends StatelessWidget {
                   child: GestureDetector(
                     //Anonymous Function
                     onTap: () {
-                      print('Right Dice Tapped');
+                      rightDice = 6;
+                      print(rightDice);
                     },
                     child: Image.asset(
-                      'assets/dice2.png',
+                      'assets/dice$rightDice.png',
                     ),
                   ),
                 ),
