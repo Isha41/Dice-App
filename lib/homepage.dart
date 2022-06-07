@@ -1,4 +1,6 @@
+import 'package:diceapp/nextpage.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -34,7 +36,8 @@ class _homepageState extends State<homepage> {
                     //Anonymous Function
                     onTap: () {
                       setState(() {
-                        leftDice = 5;
+                        var rng = Random();
+                        leftDice = rng.nextInt(6) + 1;
                       });
                       print(leftDice);
                     },
@@ -47,7 +50,10 @@ class _homepageState extends State<homepage> {
                   child: GestureDetector(
                     //Anonymous Function
                     onTap: () {
-                      rightDice = 6;
+                      setState(() {
+                        var rng = Random();
+                        rightDice = rng.nextInt(6) + 1;
+                      });
                       print(rightDice);
                     },
                     child: Image.asset(
@@ -56,6 +62,25 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 70,
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NextPage()));
+              },
+              child: Text(
+                "Ask Me",
+                style: TextStyle(color: Colors.white),
+              ),
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(
+                  width: 2,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),
